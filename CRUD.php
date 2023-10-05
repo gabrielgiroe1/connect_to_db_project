@@ -45,6 +45,11 @@ if (isset($_POST['delete']) && isset($_POST['user_id'])) {
       echo ("</td><td>");
       echo ($row['password']);
       echo ("</td><td>");
+      echo ('<form method="post" action="edit.php">');
+      echo ('<input type="hidden" name="user_id" value="' . $row['id'] . '">');
+      echo ('<input type="submit" value="Edit" name="edit">');
+      echo ("</form>");
+      echo ("</td><td>");
       echo ('<form method="post"><input type="hidden"');
       echo ('name="user_id" value="' . $row['id'] . '">' . "\n");
       echo ('<input type= "submit" value= "Delete" name="delete">');
